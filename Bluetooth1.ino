@@ -25,7 +25,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  /*
+  
   if (miBT.available()){      //Lee BT y envia a Arduino
     recibido = miBT.read();
 
@@ -37,7 +37,7 @@ void loop() {
       digitalWrite(G, !digitalRead(G));
     }
   }
-*/
+
   digitalWrite(trigger, LOW);
   delayMicroseconds(5);
 
@@ -51,11 +51,6 @@ void loop() {
   delay(1000);
   digitalWrite(trigger, LOW);
 
-  if (Serial.available()){    //Lee Arduino y envía a BT
-    miBT.print(distancia);
-    miBT.println(" cm");
-    Serial.print(distancia);
-    Serial.println(" cm");
-  }
+  Serial.println(distancia)
 
 }
